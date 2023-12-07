@@ -1,3 +1,5 @@
+from helper import read_file
+
 
 NUMBERS = {
     "one": 1,
@@ -29,19 +31,13 @@ EXAMPLE_2 = [
 ]
 
 EXAMPLE_3 = [
-    # "one2",
-    # "3four",
-    # "55",
-    # "6",
-    # "seven",
+    "one2",
+    "3four",
+    "55",
+    "6",
+    "seven",
     "seven1seven",
 ]
-
-def read_file():
-    ret_val = []
-    with open('data.txt') as f:
-        ret_val = f.readlines()
-    return [line.replace('\n', '') for line in ret_val]
 
 def extract_numeric_values(line):
     number_as_string = ""
@@ -98,7 +94,7 @@ def main():
     data = []
     for index, line in enumerate(lines):
         x = extract_numbers(line)
-        print(index + 1, x)
+        # print(index + 1, x)
         data.append(x)
     
     print(sum(data))
